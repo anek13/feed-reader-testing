@@ -25,8 +25,6 @@ $(function() {
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(0);
         });
-
-
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
@@ -37,8 +35,6 @@ $(function() {
              expect(feed.url.length).not.toBe(0);
            }
          });
-
-
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
@@ -49,13 +45,10 @@ $(function() {
              expect(feed.name.length).not.toBe(0);
            }
          });
-
     });
-
 
     /* TODO: Write a new test suite named "The menu" */
     describe('The menu', function() {
-
       /* TODO: Write a test that ensures the menu element is
       * hidden by default. You'll have to analyze the HTML and
       * the CSS to determine how we're performing the
@@ -80,7 +73,6 @@ $(function() {
         menuIcon.click();
         expect($('body').hasClass('menu-hidden')).toBe(true);
       });
-
     });
 
     /* TODO: Write a new test suite named "Initial Entries" */
@@ -94,12 +86,10 @@ $(function() {
       beforeEach(function(done) {
         loadFeed(0, done);
       });
-
-      it('should have at least a single .entry when completed', function() {
+      it('should have at least a single entry when completed', function() {
         const feed = document.querySelector('.feed');
         expect(feed.children.length).toBeGreaterThan(0);
       })
-
     });
 
     /* TODO: Write a new test suite named "New Feed Selection" */
@@ -108,10 +98,16 @@ $(function() {
       * by the loadFeed function that the content actually changes.
       * Remember, loadFeed() is asynchronous.
       */
-
-
+      let oldFeed;
+      beforeEach(function(done) {
+        loadFeed(0,  function() {
+          oldFeed = $('.feed').html();
+          loadFeed(1,done);
+        });
+      });
+      it('has different content', function() {
+        expect($('.feed').html()).not.toEqual(oldFeed);
+      })
     });
-
-
 
 }());
