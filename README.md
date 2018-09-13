@@ -1,25 +1,28 @@
-# Project Overview
+# About the project
 
-In this project you are given a web-based application that reads RSS feeds. The original developer of this application clearly saw the value in testing, they've already included [Jasmine](http://jasmine.github.io/) and even started writing their first test suite! Unfortunately, they decided to move on to start their own company and we're now left with an application with an incomplete test suite. That's where you come in.
+In this project a web-based application that reads RSS feeds is tested using Jasmine (http://jasmine.github.io/). The test encompass the underlying business logic of the application as well as the event handling and DOM manipulation.
 
+## Table of Contents
 
-## Why this Project?
+* [Install](#install)
+* [Instructions](#instructions)
+* [License](#license)
 
-Testing is an important part of the development process and many organizations practice a standard of development known as "test-driven development". This is when developers write tests first, before they ever start developing their application. All the tests initially fail and then they start writing application code to make these tests pass.
+## Install
 
-Whether you work in an organization that uses test-driven development or in an organization that uses tests to make sure future feature development doesn't break existing features, it's an important skill to have!
+To run the tests, clone this repository
+```
+git clone https://github.com/anek13/feed-reader-testing.git
+```
+and open the index.html file in your web browser.
 
+## Instructions
 
-## What will I learn?
+The tests will results will be displayed at the bottom of the page when it is loaded.
 
-You will learn how to use Jasmine to write a number of tests against a pre-existing application. These will test the underlying business logic of the application as well as the event handling and DOM manipulation.
+## License
 
-
-## How will this help my career?
-
-* Writing effective tests requires analyzing multiple aspects of an application including the HTML, CSS and JavaScript - an extremely important skill when changing teams or joining a new company.
-* Good tests give you the ability to quickly analyze whether new code breaks an existing feature within your codebase, without having to manually test all of the functionality.
-
+The MIT License (MIT).
 
 # How will I complete this project?
 

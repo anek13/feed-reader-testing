@@ -98,15 +98,18 @@ $(function() {
       * by the loadFeed function that the content actually changes.
       * Remember, loadFeed() is asynchronous.
       */
-      let oldFeed;
+      let oldFeed, newFeed;
       beforeEach(function(done) {
         loadFeed(0,  function() {
           oldFeed = $('.feed').html();
-          loadFeed(1,done);
+          loadFeed(1, function() {
+            newFeed = $('.feed').html();
+            done();
+          });
         });
       });
       it('has different content', function() {
-        expect($('.feed').html()).not.toEqual(oldFeed);
+        expect(newFeed).not.toEqual(oldFeed);
       })
     });
 
