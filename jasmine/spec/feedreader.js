@@ -87,8 +87,7 @@ $(function() {
         loadFeed(0, done);
       });
       it('should have at least a single entry when completed', function() {
-        const feed = document.querySelector('.feed');
-        expect(feed.children.length).toBeGreaterThan(0);
+        expect($('.feed .entry').length).toBeGreaterThan(0);
       })
     });
 
